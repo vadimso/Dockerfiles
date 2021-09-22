@@ -4,7 +4,9 @@ RUN mkdir -p  /root/pizza-express
 RUN apt-get install git
 RUN git clone https://github.com/OrenAshkenazyBigID/pizza-express /root/pizza-express
 WORKDIR /pizza-express
-RUN touch package.json & server.js
-RUN npm install express & redis
+RUN npm cache clean --force
+EXPOSE 6379
+RUN npm install express
+RUN npm install redis
 RUN npm init & npm i express --save & npm i mocha --save-dev
-CMD [ "node", "server.js" ]
+CMD node server.js
