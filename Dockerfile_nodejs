@@ -3,7 +3,7 @@ ENV NODE_ENV=test
 RUN mkdir -p  /root/pizza-express
 RUN apt-get install git
 RUN git clone https://github.com/OrenAshkenazyBigID/pizza-express /root/pizza-express
-WORKDIR /pizza-express
+WORKDIR /root/pizza-express
 RUN npm cache clean --force
 EXPOSE 6379
 RUN npm install express
