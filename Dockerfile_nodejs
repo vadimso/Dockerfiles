@@ -6,6 +6,8 @@ RUN git clone https://github.com/OrenAshkenazyBigID/pizza-express /root/pizza-ex
 WORKDIR /root/pizza-express
 RUN npm cache clean --force
 EXPOSE 6379
+RUN apt-get install redis-server
+RUN redis-server &
 RUN npm install express
 RUN npm install redis
 RUN npm init & npm i express --save & npm i mocha --save-dev
